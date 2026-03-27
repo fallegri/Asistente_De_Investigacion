@@ -17,7 +17,13 @@
 - Traducción a otros idiomas
 - Mejoras en la validación de verbos Bloom
 - Integración con otros modelos de IA
+- Mejoras de accesibilidad y responsive
 
 ## Requisitos del entorno
 
 Ver `README.md` sección de instalación.
+
+## Código de conducta
+
+Este proyecto sigue un ambiente abierto y respetuoso.
+Cualquier contribución es bienvenida independientemente del nivel de experiencia.

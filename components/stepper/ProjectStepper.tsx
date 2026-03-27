@@ -36,7 +36,7 @@ export function ProjectStepper() {
 
   return (
     <div className="bg-white border-b border-[var(--color-border)] sticky top-0 z-40 shadow-sm">
-      <div className="max-w-5xl mx-auto px-6 py-4">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
 
         {/* Header del proyecto */}
         <div className="flex items-center justify-between mb-4">
@@ -44,7 +44,7 @@ export function ProjectStepper() {
             <p className="text-xs text-[var(--color-text-muted)] uppercase tracking-widest font-semibold">
               EIT — Perfil de Investigación
             </p>
-            <h2 className="font-display text-lg text-[var(--color-text-primary)] leading-tight">
+            <h2 className="font-display text-base sm:text-lg text-[var(--color-text-primary)] leading-tight">
               {project.titulo_tentativo || 'Sin título aún'}
             </h2>
           </div>
@@ -109,7 +109,7 @@ export function ProjectStepper() {
 
                   <span
                     className={cn(
-                      'text-center text-xs font-medium leading-tight max-w-[80px]',
+                      'hidden sm:block text-center text-xs font-medium leading-tight max-w-[80px]',
                       isActive    && 'text-[var(--color-text-primary)]',
                       isCompleted && 'text-[var(--color-accent)]',
                       isLocked    && 'text-[var(--color-text-muted)]'
