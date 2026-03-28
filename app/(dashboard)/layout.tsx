@@ -1,9 +1,7 @@
 // app/(dashboard)/layout.tsx
-// Layout del grupo dashboard.
-// El middleware ya protege estas rutas, pero hacemos una verificación
-// extra en el servidor para mayor seguridad (defense in depth).
+// El middleware ya protege estas rutas — este layout solo renderiza.
+// Sin verificación de auth aquí para evitar conflictos de hidratación.
 
-import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { DashboardHeader } from '@/components/layout/DashboardHeader'
 
@@ -15,14 +13,12 @@ export default async function DashboardLayout({
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
-  // Doble verificación server-side (el middleware es la primera capa)
-  if (!user) {
-    redirect('/login')
-  }
+  const nombre = user?.user_metadata?.nombre_completo ?? user?.email ?? ''
+  const email  = user?.email ?? ''
 
   return (
     <div className="min-h-screen bg-[var(--color-surface)]">
-      <DashboardHeader />
+      <DashboardHeader nombre={nombre} email={email} />
       {children}
     </div>
   )
