@@ -1,6 +1,7 @@
 // app/(dashboard)/layout.tsx
-// El middleware ya protege estas rutas — este layout solo renderiza.
-// Sin verificación de auth aquí para evitar conflictos de hidratación.
+// Layout del grupo dashboard.
+// Protección de rutas: middleware.ts
+// Este layout solo obtiene datos del usuario para el header.
 
 import { createClient } from '@/lib/supabase/server'
 import { DashboardHeader } from '@/components/layout/DashboardHeader'
